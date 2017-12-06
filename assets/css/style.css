@@ -1,0 +1,9 @@
+body {
+	background: url("../images/congruent_pentagon.png");
+}
+
+.content {
+	background-color: #fff;
+	text-align: center;
+	margin-top: 100px;
+}
