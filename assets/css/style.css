@@ -1,9 +1,45 @@
 body {
 	background: url("../images/congruent_pentagon.png");
+	font-size: 16px;
 }
 
 .content {
 	background-color: #fff;
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 70px;
+	height: 500px;
+}
+
+#answers {
+	padding: ;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 4em;
+}
+
+button {
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    padding: 10px 0px 10px 0px;
+    width: 450px;
+    font-size: 18px;
+}
+
+button:hover {
+	background: #64e591;
+}
+
+#startButton {
+	background: #64e591;
+}
+
+#startButton:hover {
+	background: none repeat scroll 0 0 transparent;
+}
+
+/* hides buttons when no question is on the page */
+.hide {
+	display: none;
 }
