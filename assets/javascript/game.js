@@ -35,7 +35,9 @@ var trivia = {
 
 
 	function firstQuestion(){
-		var time = 30;
+
+		var time = 5;
+
 		$("#startButton").addClass("hide");
 		$("#timeRemaining").html("<h2>" + time + "</h2>");
 		$("#question").removeClass("hide");
@@ -48,14 +50,25 @@ var trivia = {
 		$("#buttonTwo").html(trivia.answersOne[1]);
 		$("#buttonThree").html(trivia.answersOne[2]);
 		$("#buttonFour").html(trivia.answersOne[3]);
-		setInterval(function(){
+		
+		var timer = setInterval(function(){
 			time--;
 			$("#timeRemaining").html("<h2>" + time + "</h2>");
 		}, 1000);
+		
 		$("#buttonOne").click(function(){
 			correctAnswers++;
 			
 		});
+
+		if (time < 0){
+			clearInterval(timer);
+			$("#question").html("<h3>Wrong! The correct answer was" + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+			$("#buttonOne").addClass("hide");
+			$("#buttonTwo").addClass("hide");
+			$("#buttonThree").addClass("hide");
+			$("#buttonFour").addClass("hide");
+		};
 	};
 
 	function secondQuestion(){
