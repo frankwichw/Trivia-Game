@@ -32,12 +32,35 @@ $( document ).ready(function() {
 		]
 	};
 
-	// start buton initialization
+	// start button initialization
 	$("#startButton").click(function(){
 		firstQuestion();
 	});
 
-	// questions
+	// initialize timer variable
+	var timer;
+
+	// button events for question one
+	$("#buttonOneQ1").click(function(){
+		clearInterval(timer);
+		correctAnswers++;
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ1").addClass("hide");
+		$("#buttonsQ1").addClass("hide");
+		setTimeout(secondQuestion, 3000);
+		console.log(correctAnswers);
+		console.log(incorrectAnswers);
+	});
+
+	$("#buttonTwoQ1, #buttonThreeQ1, #buttonFourQ1").click(function(){
+		clearInterval(timer);
+		incorrectAnswers++;
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ1").addClass("hide");
+		$("#buttonsQ1").addClass("hide");
+		setTimeout(secondQuestion, 3000);
+	});
+
 	function firstQuestion(){
 
 		var time = 30;
@@ -54,7 +77,7 @@ $( document ).ready(function() {
 		$("#buttonFourQ1").html(trivia.answersOne[3]);
 		
 		// timer interval and button choices
-		var timer = setInterval(function(){
+		timer = setInterval(function(){
 			time--;
 			$("#timeRemainingQ1").html("<h2>" + time + "</h2>");
 			if (time < 0){
@@ -65,27 +88,30 @@ $( document ).ready(function() {
 				$("#buttonsQ1").addClass("hide");
 				setTimeout(secondQuestion, 3000);
 			};
-			}, 1000);
-
-			$("#buttonOneQ1").click(function(){
-				clearInterval(timer);
-				correctAnswers++;
-				$("#question").html("<h3>Correct! The answer is " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ1").addClass("hide");
-				$("#buttonsQ1").addClass("hide");
-				setTimeout(secondQuestion, 3000);
-			});
-
-			$("#buttonTwoQ1, #buttonThreeQ1, #buttonFourQ1").click(function(){
-				clearInterval(timer);
-				incorrectAnswers++;
-				$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ1").addClass("hide");
-				$("#buttonsQ1").addClass("hide");
-				setTimeout(secondQuestion, 3000);
-			});		
-		
+		}, 1000);
+	
 	};
+
+	// button events for question two
+	$("#buttonOneQ2, #buttonTwoQ2, #buttonFourQ2").click(function(){
+		clearInterval(timer);
+		incorrectAnswers++;
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ2").addClass("hide");
+		$("#buttonsQ2").addClass("hide");
+		setTimeout(thirdQuestion, 3000);
+		console.log(correctAnswers);
+		console.log(incorrectAnswers);
+	});
+
+	$("#buttonThreeQ2").click(function(){
+		clearInterval(timer);
+		correctAnswers++;
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ2").addClass("hide");
+		$("#buttonsQ2").addClass("hide");
+		setTimeout(thirdQuestion, 3000);
+	});
 
 	function secondQuestion(){
 		var timeTwo = 30;
@@ -99,41 +125,44 @@ $( document ).ready(function() {
 		$("#buttonThreeQ2").html(trivia.answersTwo[2]);
 		$("#buttonFourQ2").html(trivia.answersTwo[3]);
 		
-		var timerTwo = setInterval(function(){
+		timer = setInterval(function(){
 			timeTwo--;
 			$("#timeRemainingQ2").html("<h2>" + timeTwo + "</h2>");
 			if (timeTwo < 0){
-				clearInterval(timerTwo);
+				clearInterval(timer);
 				incorrectAnswers++;
 				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
 				$("#timeRemainingQ2").addClass("hide");
 				$("#buttonsQ2").addClass("hide");
 				setTimeout(thirdQuestion, 3000);
 			};
-			}, 1000);
-
-			$("#buttonOneQ2, #buttonTwoQ2, #buttonFourQ2").click(function(){
-				clearInterval(timerTwo);
-				incorrectAnswers++;
-				$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ2").addClass("hide");
-				$("#buttonsQ2").addClass("hide");
-				setTimeout(thirdQuestion, 3000);
-			});
-
-			$("#buttonThreeQ2").click(function(){
-				clearInterval(timerTwo);
-				correctAnswers++;
-				$("#question").html("<h3>Correct! The answer is " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ2").addClass("hide");
-				$("#buttonsQ2").addClass("hide");
-				setTimeout(thirdQuestion, 3000);
-			});
+		}, 1000);
 		
 	};
 
+	// button events for question three
+	$("#buttonOneQ3, #buttonTwoQ3, #buttonFourQ3").click(function(){
+		clearInterval(timer);
+		incorrectAnswers++;
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ3").addClass("hide");
+		$("#buttonsQ3").addClass("hide");
+		setTimeout(endPage, 3000);
+		console.log(correctAnswers);
+		console.log(incorrectAnswers);
+	});
+
+	$("#buttonThreeQ3").click(function(){
+		clearInterval(timer);
+		correctAnswers++;
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#timeRemainingQ3").addClass("hide");
+		$("#buttonsQ3").addClass("hide");
+		setTimeout(endPage, 3000);
+	});
+
 	function thirdQuestion(){
-		timeThree = 30;
+		var timeThree = 30;
 
 		$("#timeRemainingQ3").removeClass("hide");
 		$("#timeRemainingQ3").html("<h2>" + timeThree + "</h2>");
@@ -144,36 +173,18 @@ $( document ).ready(function() {
 		$("#buttonThreeQ3").html(trivia.answersThree[2]);
 		$("#buttonFourQ3").html(trivia.answersThree[3]);
 		
-		var timerThree = setInterval(function(){
+		timer = setInterval(function(){
 			timeThree--;
-			$("#timeRemaining").html("<h2>" + timeThree + "</h2>");
+			$("#timeRemainingQ3").html("<h2>" + timeThree + "</h2>");
 			if (timeThree < 0){
-				clearInterval(timerThree);
+				clearInterval(timer);
 				incorrectAnswers++;
 				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
 				$("#timeRemainingQ3").addClass("hide");
 				$("#buttonsQ3").addClass("hide");
-				setTimeout(endpage, 3000);
+				setTimeout(endPage, 3000);
 			};
 			}, 1000);
-
-			$("#buttonOneQ3, #buttonTwoQ3, #buttonFourQ3").click(function(){
-				clearInterval(timerThree);
-				incorrectAnswers++;
-				$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ3").addClass("hide");
-				$("#buttonsQ3").addClass("hide");
-				setTimeout(endPage, 3000);
-			});
-
-			$("#buttonThreeQ3").click(function(){
-				clearInterval(timerThree);
-				correctAnswers++;
-				$("#question").html("<h3>Correct! The answer is " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
-				$("#timeRemainingQ3").addClass("hide");
-				$("#buttonsQ3").addClass("hide");
-				setTimeout(endPage, 3000);
-			});
 		
 	};
 
@@ -189,6 +200,8 @@ $( document ).ready(function() {
 			$("#question").empty();
 			$("#resetButtonDiv").addClass("hide");
 			$("#startButton").removeClass("hide");
-		});
+			console.log(correctAnswers);
+			console.log(incorrectAnswers);
+	});
 
 });
