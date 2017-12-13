@@ -8,27 +8,27 @@ $( document ).ready(function() {
 	// object containing trivia questions and answers
 	var trivia = {
 		questions: [
-		"Question one?",
-		"Question two?",
-		"Question three?"
+		"Which of these is a fruit introduced in Animal Crossing: New Leaf?",
+		"At what time of year can you catch a dung beetle in Animal Crossing: Wild World?",
+		"Which character was made optional in Animal Crossing: New Leaf because he was too scary for some young players?"
 		],
 		answersOne: [
-		"Right answer",
-		"Wrong answer",
-		"Wrong answer",
-		"Wrong answer"
+		"mangoes",
+		"cherries",
+		"pears",
+		"apples"
 		],
 		answersTwo: [
-		"Wrong answer",
-		"Wrong answer",
-		"Right answer",
-		"Wrong answer"
+		"Only in June",
+		"March to October",
+		"December to February",
+		"There are no dung beetles in Wild World"
 		],
 		answersThree: [
-		"Wrong answer",
-		"Wrong answer",
-		"Right answer",
-		"Wrong answer"
+		"Wendle",
+		"K.K. Slider",
+		"Mr. Resetti",
+		"Dr. Shrunk"
 		]
 	};
 
@@ -44,21 +44,19 @@ $( document ).ready(function() {
 	$("#buttonOneQ1").click(function(){
 		clearInterval(timer);
 		correctAnswers++;
-		$("#question").html("<h3>Correct! The answer is " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersOne[0] + ".</h3><img src='assets/images/tiffany.gif' width='400'>");
 		$("#timeRemainingQ1").addClass("hide");
 		$("#buttonsQ1").addClass("hide");
-		setTimeout(secondQuestion, 3000);
-		console.log(correctAnswers);
-		console.log(incorrectAnswers);
+		setTimeout(secondQuestion, 4000);
 	});
 
 	$("#buttonTwoQ1, #buttonThreeQ1, #buttonFourQ1").click(function(){
 		clearInterval(timer);
 		incorrectAnswers++;
-		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersOne[0] + ".</h3><img src='assets/images/tiffany.gif' width='400'>");
 		$("#timeRemainingQ1").addClass("hide");
 		$("#buttonsQ1").addClass("hide");
-		setTimeout(secondQuestion, 3000);
+		setTimeout(secondQuestion, 4000);
 	});
 
 	function firstQuestion(){
@@ -84,9 +82,9 @@ $( document ).ready(function() {
 				clearInterval(timer);
 				incorrectAnswers++;
 				$("#timeRemainingQ1").addClass("hide");
-				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersOne[0] + "<h3><img src='assets/images/placeholder.gif'>");
+				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersOne[0] + ".</h3><img src='assets/images/tiffany.gif' width='400'>");
 				$("#buttonsQ1").addClass("hide");
-				setTimeout(secondQuestion, 3000);
+				setTimeout(secondQuestion, 4000);
 			};
 		}, 1000);
 	
@@ -96,21 +94,19 @@ $( document ).ready(function() {
 	$("#buttonOneQ2, #buttonTwoQ2, #buttonFourQ2").click(function(){
 		clearInterval(timer);
 		incorrectAnswers++;
-		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersTwo[2] + ".</h3><img src='assets/images/able.gif' width='400'>");
 		$("#timeRemainingQ2").addClass("hide");
 		$("#buttonsQ2").addClass("hide");
-		setTimeout(thirdQuestion, 3000);
-		console.log(correctAnswers);
-		console.log(incorrectAnswers);
+		setTimeout(thirdQuestion, 4000);
 	});
 
 	$("#buttonThreeQ2").click(function(){
 		clearInterval(timer);
 		correctAnswers++;
-		$("#question").html("<h3>Correct! The answer is " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersTwo[2] + ".</h3><img src='assets/images/able.gif' width='400'>");
 		$("#timeRemainingQ2").addClass("hide");
 		$("#buttonsQ2").addClass("hide");
-		setTimeout(thirdQuestion, 3000);
+		setTimeout(thirdQuestion, 4000);
 	});
 
 	function secondQuestion(){
@@ -131,10 +127,10 @@ $( document ).ready(function() {
 			if (timeTwo < 0){
 				clearInterval(timer);
 				incorrectAnswers++;
-				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersTwo[2] + "<h3><img src='assets/images/placeholder.gif'>");
+				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersTwo[2] + ".</h3><img src='assets/images/able.gif' width='400'>");
 				$("#timeRemainingQ2").addClass("hide");
 				$("#buttonsQ2").addClass("hide");
-				setTimeout(thirdQuestion, 3000);
+				setTimeout(thirdQuestion, 4000);
 			};
 		}, 1000);
 		
@@ -144,10 +140,10 @@ $( document ).ready(function() {
 	$("#buttonOneQ3, #buttonTwoQ3, #buttonFourQ3").click(function(){
 		clearInterval(timer);
 		incorrectAnswers++;
-		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Wrong! The correct answer was " + trivia.answersThree[2] + ".</h3><img src='assets/images/resetti.gif'>");
 		$("#timeRemainingQ3").addClass("hide");
 		$("#buttonsQ3").addClass("hide");
-		setTimeout(endPage, 3000);
+		setTimeout(endPage, 4000);
 		console.log(correctAnswers);
 		console.log(incorrectAnswers);
 	});
@@ -155,10 +151,10 @@ $( document ).ready(function() {
 	$("#buttonThreeQ3").click(function(){
 		clearInterval(timer);
 		correctAnswers++;
-		$("#question").html("<h3>Correct! The answer is " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
+		$("#question").html("<h3>Correct! The answer is " + trivia.answersThree[2] + ".</h3><img src='assets/images/resetti.gif'>");
 		$("#timeRemainingQ3").addClass("hide");
 		$("#buttonsQ3").addClass("hide");
-		setTimeout(endPage, 3000);
+		setTimeout(endPage, 4000);
 	});
 
 	function thirdQuestion(){
@@ -179,10 +175,10 @@ $( document ).ready(function() {
 			if (timeThree < 0){
 				clearInterval(timer);
 				incorrectAnswers++;
-				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersThree[2] + "<h3><img src='assets/images/placeholder.gif'>");
+				$("#question").html("<h3>Out of time! The correct answer was " + trivia.answersThree[2] + ".</h3><img src='assets/images/resetti.gif'>");
 				$("#timeRemainingQ3").addClass("hide");
 				$("#buttonsQ3").addClass("hide");
-				setTimeout(endPage, 3000);
+				setTimeout(endPage, 4000);
 			};
 			}, 1000);
 		

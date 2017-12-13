@@ -10,13 +10,40 @@ body {
 	height: 500px;
 }
 
-#answers {
-	padding: ;
+#startButton {
+	margin-top: 130px;
 }
 
+
 h1 {
-	font-family: 'Lobster', cursive;
+	/* font-family: 'Lobster', cursive; */
+	font-family: 'Roboto Slab', serif;
 	font-size: 4em;
+	color: #e8a010;
+	text-shadow: 1px 1px 0 #a55500,
+    -2px 2px 0 #a55500,
+    2px -2px 0 #a55500,
+    -2px -2px 0 #a55500,
+    1px 2px 0 #a55500,
+    1px -2px 0 #a55500,
+    -2px 1px 0 #a55500,
+    2px 1px 0 #a55500,
+    3px 3px 0 #a55500,
+    -3px 3px 0 #a55500,
+    3px -3px 0 #a55500,
+    -3px -3px 0 #a55500,
+    1px 3px 0 #a55500,
+    1px -3px 0 #a55500,
+    -3px 1px 0 #a55500,
+    3px 1px 0 #a55500,
+    2px 3px 0 #a55500,
+    -2px 3px 0 #a55500,
+    2px -3px 0 #a55500,
+    -2px -3px 0 #a55500,
+    3px 2px 0 #a55500,
+    -3px 2px 0 #a55500,
+    3px -2px 0 #a55500,
+    -3px -2px 0 #a55500;
 }
 
 button {
@@ -29,7 +56,7 @@ button {
 }
 
 button:hover {
-	background: none repeat scroll 0 0 transparent;
+	background: #e8a010;
 }
 
 /* hides buttons when no question is on the page */
