@@ -20,22 +20,15 @@ h1 {
 }
 
 button {
-	background: none repeat scroll 0 0 transparent;
+	background: #64e591;
     border: medium none;
     padding: 10px 0px 10px 0px;
     width: 450px;
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
 button:hover {
-	background: #64e591;
-}
-
-#startButton {
-	background: #64e591;
-}
-
-#startButton:hover {
 	background: none repeat scroll 0 0 transparent;
 }
 
